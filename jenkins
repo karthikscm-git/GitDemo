@@ -3,13 +3,16 @@ pipeline {
   stages {
     stage('Build'){
       steps{
- 	 sh "Build"
+ 	 sh '''
+	    echo "MultiLine shell steps works too"
+	    ls -lah
+      	 '''
        }
      }
      stage('Test'){
       steps{
- 	 echo "Test"
-       }
+ 	    echo "Test the code"
+ 	    }
      }
    }
  }
